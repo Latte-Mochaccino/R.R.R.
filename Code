@@ -1,0 +1,58 @@
+from discord.ext import commands
+import discord
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+#-
+bot = commands.Bot(command_prefix='-', intents=intents)
+
+@bot.event
+async def encendido():
+
+    print(f'Tu bot {bot.user} esta en linea')
+
+@bot.command()
+async def saludo(ctx):
+    """Envía un mensaje de saludo."""
+    await ctx.send('Hola, qué tal?')
+
+@bot.command()
+async def res_sort(ctx, *, residue:str):
+    """Proporciona información sobre cómo reutilizar o reciclar diferentes tipos de residuos."""
+    residue = residue.lower()
+
+    if "vidrio" in residue:
+
+        await ctx.send("Los envases de vidrio se pueden reutilizar como contenedores de alimentos o decoraciones," \
+        "pero si estos están rotos,es más recomendable reciclarlos adecuadamente para evitar lesiones y contaminación ambiental.")
+
+    elif "papel" in residue:
+
+        await ctx.send("El papel puede ser reutilizado para hacer manualidades, notas o incluso papel reciclado casero," \
+        "pero si está muy sucio o mojado, es mejor reciclarlo para evitar problemas de calidad en el proceso de reciclaje. También puede ser compostado si no tiene tintas tóxicas.")
+
+    elif "metal" in residue:
+
+        await ctx.send("Los objetos de metal pueden ser reutilizados para proyectos de bricolaje, como muebles o decoraciones," \
+        "pero si están oxidados o dañados, es mejor reciclarlos para recuperar los materiales y reducir la necesidad de extraer nuevos recursos.")
+
+    elif "electronico" in residue:
+
+        await ctx.send("Los dispositivos electrónicos no deben ser reutilizados debido a los riesgos de fugas químicas y explosiones." \
+        "Es crucial reciclarlos adecuadamente en puntos de recolección specializados para evitar daños al medio ambiente y a la salud humana.")
+
+    elif "organico" in residue:
+
+        await ctx.send("Los residuos orgánicos pueden ser reutilizados para hacer compost, que es un excelente fertilizante natural para plantas," \
+        "pero si están contaminados con productos químicos o plásticos, es mejor desecharlos de manera segura para evitar la contaminación del suelo y del agua.")
+                       
+
+    elif "plastico" in residue:
+
+        await ctx.send("Los objetos de plástico pueden ser reutilizados para hacer manualidades, organizadores o incluso macetas," \
+        "pero si están muy dañados o contaminados, es mejor reciclarlos para reducir la cantidad de plástico que termina en vertederos y océanos.")
+
+token = Empty
+
+bot.run(token)
