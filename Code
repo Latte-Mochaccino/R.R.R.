@@ -45,13 +45,17 @@ async def res_sort(ctx, *, residue:str):
     elif "organico" in residue:
 
         await ctx.send("Los residuos orgánicos pueden ser reutilizados para hacer compost, que es un excelente fertilizante natural para plantas," \
-        "pero si están contaminados con productos químicos o plásticos, es mejor desecharlos de manera segura para evitar la contaminación del suelo y del agua.")
-                       
+        "pero si están contaminados con productos químicos o plásticos, es mejor desecharlos de manera segura para evitar la contaminación del suelo y del agua.")                   
 
     elif "plastico" in residue:
 
         await ctx.send("Los objetos de plástico pueden ser reutilizados para hacer manualidades, organizadores o incluso macetas," \
         "pero si están muy dañados o contaminados, es mejor reciclarlos para reducir la cantidad de plástico que termina en vertederos y océanos.")
+
+    else:
+
+        await ctx.send("Lo siento, no tengo información sobre ese tipo de residuo. Por favor, intenta con vidrio, papel, metal, electrónico," \
+        "orgánico o plástico.(excluyendo acentos)")
 
 token = Empty
 
