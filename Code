@@ -40,7 +40,7 @@ async def res_sort(ctx, *, residue:str):
     elif "electronico" in residue:
 
         await ctx.send("Los dispositivos electrónicos no deben ser reutilizados debido a los riesgos de fugas químicas y explosiones." \
-        "Es crucial reciclarlos adecuadamente en puntos de recolección specializados para evitar daños al medio ambiente y a la salud humana.")
+        "Es crucial reciclarlos adecuadamente en puntos de recolección especializados para evitar daños al medio ambiente y a la salud humana.")
 
     elif "organico" in residue:
 
