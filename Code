@@ -57,6 +57,20 @@ async def res_sort(ctx, *, residue:str):
         await ctx.send("Lo siento, no tengo información sobre ese tipo de residuo. Por favor, intenta con vidrio, papel, metal, electrónico," \
         "orgánico o plástico.(excluyendo acentos)")
 
+@bot.command()
+async def org_link(ctx):
+    """Proporciona enlaces a organizaciones de reciclaje y sostenibilidad dentro de Latinoamérica."""
+    links = [
+        "https://latitudr.org/",
+        "https://reciclalatam.org/",
+        "https://redrecicladores.net/",
+        "https://www.terracycle.com/es-ES/"
+    ]
+    response = "Aquí tienes algunos enlaces a organizaciones de reciclaje y sostenibilidad en Latinoamérica:\n\n"
+    for link in links:
+        response += f"- {link}\n"
+    await ctx.send(response)
+
 token = Empty
 
 bot.run(token)
